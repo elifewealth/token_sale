@@ -72,7 +72,6 @@ contract('DappToken', function(accounts) {
 			return tokenInstance.allowance(accounts[0], accounts[1]);
 		}).then(function(allowance) {
 			assert.equal(allowance.toNumber(), 100, 'stores the allowance for delegated transfer');
-
 		})
 	});
 
