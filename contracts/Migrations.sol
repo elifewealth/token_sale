@@ -1,23 +1,28 @@
 pragma solidity ^0.4.24;
 
-contract Migrations {
-  address public owner;
-  uint public last_completed_migration;
+import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol';
+import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol';
 
-  constructor() public {
-    owner = msg.sender;
-  }
+contract Migrations is ERC721Full, ERC721Mintable {
+  constructor() ERC721Full("Migrations", "MIG") public {
+    address public owner;
+    uint public last_completed_migration;
 
-  modifier restricted() {
-    if (msg.sender == owner) _;
-  }
+    constructor() public {
+      owner = msg.sender;
+    }
 
-  function setCompleted(uint completed) public restricted {
-    last_completed_migration = completed;
-  }
+    modifier restricted() {
+      if (msg.sender == owner) _;
+    }
 
-  function upgrade(address new_address) public restricted {
-    Migrations upgraded = Migrations(new_address);
-    upgraded.setCompleted(last_completed_migration);
+    function setCompleted(uint completed) public restricted {
+      last_completed_migration = completed;
+    }
+
+    function upgrade(address new_address) public restricted {
+      Migrations upgraded = Migrations(new_address);
+      upgraded.setCompleted(last_completed_migration);
+    }
   }
 }

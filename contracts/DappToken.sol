@@ -1,6 +1,10 @@
 pragma solidity ^0.4.24;
 
-contract DappToken {
+import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol';
+import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol';
+
+contract DappToken is ERC721Full, ERC721Mintable {
+	constructor() ERC721Full("DappToken", "DAPP") public {
 	// Name
 	string  public name = "DApp Token";
 	string  public symbol = "DAPP";
@@ -59,5 +63,6 @@ contract DappToken {
 		Transfer(_from, _to, _value);
 
 		return true;
+	}
 	}
 }
