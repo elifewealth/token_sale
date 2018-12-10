@@ -25,7 +25,7 @@
 					</p>
 					<br/>
 					<form onSubmit="App.buyTokens(); return false;" role="form">
-						<div class="form-group">
+						<div class="form-group" style="display: inline;">
 							<div class="input-group">
 								<input id="numberOfTokens" class="form-control input-lg" type="number" name="number" value="1" min="1" pattern="[0-9]"></input>
 								<span class="input-group-btn">
@@ -39,6 +39,7 @@
 						<div id="progress" class="progress-bar progress-bar-striped active" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 					<p><span class="tokens-sold"></span> / <span class="tokens-available"></span> tokens sold</p>
+					<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<b>NOTICE:</b> This token sale uses the Rinkeby Test Network with fake ether. Please do not spend real Ether here. Use a browser extension like Metamask to connect to the test network and participate in the ICO. Please be patient if the test nework runs slowly.</div>
 						<hr>
 						<p id="accountAddress"></p>
 				</div>
