@@ -13,7 +13,7 @@
 
 ## Elifewealth Token Website
 
-https://elifewealth.github.io/token_sale/ - Development
+https://elifewealth.github.io/token_sale/ - Development  
 https://test.elifewealth.com.sg/crowdsale/ - Testing
 
 ---
@@ -24,7 +24,7 @@ https://test.elifewealth.com.sg/crowdsale/ - Testing
 2. Install Truffle - npm install truffle -g
 3. Install Geth 1.7.3 - https://geth.ethereum.org/downloads/
 4. Make development changes
-5. Start Geth Rinkeby - Rinkeby startup.bat
+5. Start Geth Rinkeby - geth_rinkeby.bat
 6. Attach to Geth JavaScript Console - New Command Prompt Window - geth attach
 7. Unlock account - personal.unlockAccount(eth.accounts[0], null, 1200)
 8. Make necessary changes in Geth Console - eg. Provisioning some tokens for sale
